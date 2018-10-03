@@ -1,0 +1,14 @@
+{
+    "name": "subtext/autowiring",
+    "description": "A dependency injection experiment",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alonzo Turner",
+            "email": "alonzo.turner@subtextproductions.com"
+        }
+    ],
+    "require": {
+        "php-di/php-di": "^6.0"
+    }
+}
