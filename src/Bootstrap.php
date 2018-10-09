@@ -8,6 +8,8 @@ use Psr\Container\ContainerInterface;
  * Class Bootstrap
  *
  * @package Subtext\Autowiring
+ * @copyright Subtext Productions 2007-2018 All rights reserved
+ * @license GPL-3.0-only or GPL-3.0-or-later
  */
 class Bootstrap
 {
