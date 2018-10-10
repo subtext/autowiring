@@ -1,0 +1,14 @@
+# config/services.yml
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: true
+  Psr\Container\ContainerInterface: '@service_container'
+  Subtext\Autowiring\Application: ~
+  Subtext\Autowiring\Animals\:
+    resource: '../src/Animals/*'
+  Subtext\Autowiring\Colors\:
+    resource: '../src/Colors/*'
+  Subtext\Autowiring\Shapes\:
+    resource: '../src/Shapes/*'

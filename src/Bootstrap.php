@@ -1,8 +1,10 @@
 <?php
 namespace Subtext\Autowiring;
 
-use DI\ContainerBuilder;
 use Psr\Container\ContainerInterface;
+use Symfony\Component\Config\FileLocator;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
 /**
  * Class Bootstrap
@@ -13,13 +15,29 @@ use Psr\Container\ContainerInterface;
  */
 class Bootstrap
 {
+    /**
+     * @var ContainerInterface
+     */
     private $container;
 
+    /**
+     * @var Application
+     */
     private $application;
 
-    public function __construct()
-    {
+    /**
+     * @var string The root path to the project
+     */
+    private $rootPath;
 
+    /**
+     * Bootstrap constructor
+     *
+     * @param string $path
+     */
+    public function __construct(string $path)
+    {
+        $this->rootPath = $path;
     }
 
     /**
@@ -30,8 +48,14 @@ class Bootstrap
     {
         if (!$this->container instanceof ContainerInterface) {
             $builder = new ContainerBuilder();
-            $builder->addDefinitions();
-            $this->container = $builder->build();
+            $loader = new YamlFileLoader(
+                $builder,
+                new FileLocator($this->rootPath)
+            );
+            $loader->load('config/services.yml');
+            $builder->setParameter('root_path', $this->rootPath);
+            $builder->compile();
+            $this->container = $builder->get('service_container');
         }
 
         return $this->container;

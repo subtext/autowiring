@@ -2,8 +2,9 @@
 namespace Subtext\Autowiring;
 
 try {
-    require_once('../vendor/autoload.php');
-    $bootstrap = new Bootstrap;
+    $root = \realpath('..');
+    require_once($root. '/vendor/autoload.php');
+    $bootstrap = new Bootstrap($root);
     $app = $bootstrap->getApplication();
     $app->execute();
 } catch (\Throwable $err) {
