@@ -23,7 +23,7 @@ class Butterfly
     {
         $output = '';
         foreach ($this->colors as $color) {
-            $output .= $color->getColor();
+            $output .= "\n" . $color->getColor();
         }
         return $output;
     }

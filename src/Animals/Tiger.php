@@ -8,6 +8,6 @@ class Tiger
 {
     public function do(): string
     {
-        return 'Grr I\'m a tiger!';
+        return "\nGrr I'm a tiger!";
     }
 }

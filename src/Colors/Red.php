@@ -8,6 +8,6 @@ class Red
 {
     public function getColor(): string
     {
-        return 'Red';
+        return "\nRed";
     }
 }

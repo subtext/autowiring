@@ -31,11 +31,12 @@ class Application
 
     public function execute(): void
     {
-        echo "Hello, Alonzo";
-        echo "<br>";
+        echo "<pre>";
+        echo "Hello, Alonzo\n";
         $insect = $this->container->get(Butterfly::class);
         echo $insect->do();
         $lizard = $this->container->get(Iguana::class);
         echo $lizard->do();
+        echo "</pre>";
     }
 }

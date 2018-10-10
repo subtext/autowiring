@@ -8,7 +8,7 @@ class Yellow
 {
     public function getColor(): string
     {
-        return 'Yellow';
+        return "\nYellow";
     }
 
 }

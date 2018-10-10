@@ -8,6 +8,6 @@ class Circle
 {
     public function do(): string
     {
-        return 'Round and soft I am a circle';
+        return "\nRound and soft I am a circle";
     }
 }
